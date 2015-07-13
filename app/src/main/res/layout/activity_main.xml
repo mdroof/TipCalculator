@@ -48,12 +48,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/spinner"
         android:spinnerMode="dropdown"
-        android:prompt="@string/tip_percent"
+        android:entries="@array/tip_percent"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/tf_subTotal"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/tv_tipPercentLbl"
-        android:layout_toEndOf="@+id/tv_tipPercentLbl" />
+        android:layout_alignLeft="@+id/tf_subTotal"
+        android:layout_alignStart="@+id/tf_subTotal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -71,7 +72,9 @@
         android:text="Calculate Tip"
         android:id="@+id/btn_calcTip"
         android:layout_below="@+id/spinner"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/tv_tipLbl"
+        android:layout_alignStart="@+id/tv_tipLbl"
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:layout_width="wrap_content"

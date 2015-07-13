@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,9 +13,38 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onCreate), Toast.LENGTH_LONG).show();
     }
 
     @Override
+    protected void onStart() {
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onStart), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onResume() {
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onResume), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onPause() {
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onPause), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onStop() {
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onStop), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onDestroy), Toast.LENGTH_LONG).show();
+    }
+
+
+
+
+        @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);

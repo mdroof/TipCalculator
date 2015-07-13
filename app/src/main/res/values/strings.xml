@@ -7,13 +7,13 @@
     <string name="tv_subTotal">Subtotal:</string>
     <string name="tv_tipPercent">Tip Amount:</string>
     <string name="tv_total">Total:</string>
-    <string name="tip_percent">
-        <item>0%</item>
-        <item>5%</item>
-        <item>10%</item>
-        <item>15%</item>
-        <item>20%</item>
-        <item>25%</item>
-    </string>
     <string name="tv_totalAmt_value_default">0.00</string>
+
+    <string name="toast_onCreate">onCreate called!</string>
+    <string name="toast_onStart">onStart called!</string>
+    <string name="toast_onResume">onResume called!</string>
+    <string name="toast_onPause">onPause called!</string>
+    <string name="toast_onStop">onStop called!</string>
+    <string name="toast_onDestroy">onDestroy called!</string>
+
 </resources>
