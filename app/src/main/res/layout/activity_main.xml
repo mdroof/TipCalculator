@@ -74,7 +74,8 @@
         android:layout_below="@+id/spinner"
         android:layout_alignLeft="@+id/tv_tipLbl"
         android:layout_alignStart="@+id/tv_tipLbl"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:onClick="calcTip" />
 
     <TextView
         android:layout_width="wrap_content"

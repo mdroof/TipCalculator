@@ -2,43 +2,54 @@ package com.example.topgun.tipcalculator;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onCreate), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onCreate), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStart() {
-        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onStart), Toast.LENGTH_LONG).show();
+        super.onStart();
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onStart), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onResume() {
-        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onResume), Toast.LENGTH_LONG).show();
+        super.onResume();
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onResume), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onPause() {
-        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onPause), Toast.LENGTH_LONG).show();
+        super.onPause();
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onPause), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStop() {
-        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onStop), Toast.LENGTH_LONG).show();
+        super.onStop();
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onStop), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onDestroy() {
-        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onDestroy), Toast.LENGTH_LONG).show();
+        super.onDestroy();
+        Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_onDestroy), Toast.LENGTH_SHORT).show();
     }
 
 
@@ -64,5 +75,20 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void calcTip(View view){
+        //Declare vars for widgets in activity
+        //Text Views
+        TextView tv_tip = (TextView) findViewById(R.id.tv_tip);
+        TextView tv_total = (TextView) findViewById(R.id.tv_totalAmt);
+
+        //TextField (EditText)
+        EditText tf_subTotal = (EditText) findViewById(R.id.tf_subTotal);
+
+        //Spinner
+        Spinner spin_tipAmt = (Spinner) findViewById((R.id.spinner));
+        double spinVal = Double.parseDouble(String.valueOf(spin_tipAmt.getSelectedItem()).replaceAll("[-+.^:,]",""));
+
+        Log.d(TAG, "" + spinVal);
     }
 }
