@@ -87,8 +87,23 @@ public class MainActivity extends ActionBarActivity {
 
         //Spinner
         Spinner spin_tipAmt = (Spinner) findViewById((R.id.spinner));
-        double spinVal = Double.parseDouble(String.valueOf(spin_tipAmt.getSelectedItem()).replaceAll("[-+.^:,]",""));
+        double tip_percent = (Double.parseDouble(String.valueOf(spin_tipAmt.getSelectedItem()).replaceAll("[-+.%^:,]","")) / 100);
 
-        Log.d(TAG, "" + spinVal);
+        //Subtotal
+        double subtotal = Double.parseDouble(tf_subTotal.getText().toString());
+
+        //Determine tip amount
+        double tip = subtotal * tip_percent;
+
+        //Determine total
+        double total = tip + subtotal;
+
+
+        //Assign values to TextViews
+        tv_tip.setText(String.valueOf(tip));
+
+        tv_total.setText(String.valueOf(total));
+
+                //Log.d(TAG, "" + spinVal);
     }
 }
